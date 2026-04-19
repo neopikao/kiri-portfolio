@@ -524,6 +524,55 @@ button { cursor: pointer; border: none; background: none; }
 }
 .contact-list li::before { content: '—'; position: absolute; left: 0; color: var(--accent); }
 
+/* ===== ミニキャラ区切り ===== */
+.mini-divider {
+  background: var(--bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 32px 0;
+  position: relative;
+  overflow: hidden;
+}
+.mini-divider::before,
+.mini-divider::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: calc(50% - 90px);
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--border));
+}
+.mini-divider::before { left: 0; }
+.mini-divider::after  { right: 0; transform: rotate(180deg); }
+.mini-divider-img {
+  width: 120px;
+  height: auto;
+  position: relative;
+  z-index: 1;
+  animation: float 4s ease-in-out infinite;
+  filter: drop-shadow(0 4px 12px rgba(200, 54, 75, 0.25));
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+
+/* ===== 肩ズンキリちゃん（Contact右端） ===== */
+#contact { position: relative; overflow: hidden; }
+.contact-mini-char {
+  position: absolute;
+  right: max(8px, calc(50% - 580px));
+  bottom: 0;
+  width: 220px;
+  height: auto;
+  pointer-events: none;
+  filter: drop-shadow(-4px 0 16px rgba(200, 54, 75, 0.2));
+  opacity: 0;
+  transition: opacity 0.8s ease 0.3s;
+}
+#contact.in-view .contact-mini-char { opacity: 1; }
+
 /* ===== フッター ===== */
 #footer {
   background: #0c0c1a;
@@ -640,6 +689,10 @@ button { cursor: pointer; border: none; background: none; }
   .section { padding: 72px 0; }
   .works-grid { grid-template-columns: 1fr; }
   .voice-grid { grid-template-columns: 1fr; }
+  /* スマホではミニキャラを非表示 */
+  .contact-mini-char { display: none; }
+  .mini-divider { padding: 20px 0; }
+  .mini-divider-img { width: 90px; }
 }
 
 @media (max-width: 420px) {

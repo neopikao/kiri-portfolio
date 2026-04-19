@@ -88,6 +88,14 @@ const revealObserver = new IntersectionObserver(entries => {
 
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
+// Contactセクション：肩ズンキリちゃんをフェードイン
+const contactSection = document.getElementById('contact');
+if (contactSection) {
+  new IntersectionObserver(([entry]) => {
+    if (entry.isIntersecting) contactSection.classList.add('in-view');
+  }, { threshold: 0.15 }).observe(contactSection);
+}
+
 // ===== パーティクル生成 =====
 const particleRoot = document.getElementById('particles');
 if (particleRoot) {
