@@ -3,103 +3,96 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="倖狼キリ（ころう きり）| Voice Actress / VTuber。声で世界を彩るVTuber声優。アニメ・ゲーム・ナレーション、幅広く対応します。">
+  <meta name="description" content="倖狼キリ（ころう きり）| Voice Actress / VTuber。声で世界を彩るVTuber声優。アニメ・ゲーム・ナレーション対応。">
   <title>倖狼キリ | Voice Actress / VTuber</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <!-- ナビゲーション -->
-  <nav id="navbar">
-    <div class="nav-inner">
-      <div class="nav-logo">
-        <span class="logo-jp">倖狼キリ</span>
-        <span class="logo-en">KOROU KIRI</span>
-      </div>
-      <button class="nav-toggle" id="navToggle" aria-label="メニュー">
+  <header id="header">
+    <nav class="nav-inner">
+      <a href="#hero" class="nav-brand">
+        <img src="images/kiri-logo.png" alt="倖狼キリ" class="nav-logo-img">
+      </a>
+      <button class="nav-hamburger" id="hamburger" aria-label="メニュー" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#profile">プロフィール</a></li>
-        <li><a href="#achievements">実績</a></li>
-        <li><a href="#voice">ボイスサンプル</a></li>
-        <li><a href="#contact" class="nav-cta">お問い合わせ</a></li>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#profile"      class="nav-link">Profile</a></li>
+        <li><a href="#achievements" class="nav-link">Works</a></li>
+        <li><a href="#voice"        class="nav-link">Voice</a></li>
+        <li><a href="#contact"      class="nav-link nav-contact">Contact</a></li>
       </ul>
-    </div>
-  </nav>
+    </nav>
+  </header>
 
-  <!-- ヒーローセクション -->
+  <!-- ヒーロー -->
   <section id="hero">
-    <div class="hero-bg">
-      <div class="hero-particles" id="particles"></div>
-      <div class="hero-gradient"></div>
+    <div class="hero-visual">
+      <img id="heroChar" class="hero-char" src="images/kiri-main.png" alt="倖狼キリ 立ち絵">
+      <div class="hero-overlay"></div>
+      <div class="hero-deco"></div>
     </div>
+    <div class="hero-particles" id="particles"></div>
     <div class="hero-content">
-      <div class="hero-image-wrap">
-        <div class="hero-image-placeholder">
-          <!-- キャラクター画像をここに配置: images/kiri-main.png -->
-          <img src="images/kiri-main.png" alt="倖狼キリ">
-        </div>
-        <div class="hero-glow"></div>
-      </div>
-      <div class="hero-text">
-        <img src="images/kiri-logo.png" alt="倖狼キリ ロゴ" class="hero-logo">
-        <p class="hero-desc">アニメ・ゲーム・ナレーション<br>幅広く対応します</p>
-        <div class="hero-actions">
-          <a href="#voice" class="btn-primary">ボイスサンプルを聴く</a>
-          <a href="#contact" class="btn-secondary">お問い合わせ</a>
-        </div>
+      <img src="images/kiri-logo.png" alt="倖狼キリ" class="hero-logo">
+      <p class="hero-tagline">声で世界を彩るVTuber声優</p>
+      <p class="hero-sub">アニメ・ゲーム・ナレーション、幅広く対応します</p>
+      <div class="hero-btns">
+        <a href="#voice"   class="btn-primary">ボイスサンプルを聴く</a>
+        <a href="#contact" class="btn-outline">お問い合わせ</a>
       </div>
     </div>
-    <a href="#profile" class="scroll-down" aria-label="下へスクロール">
-      <div class="scroll-arrow"></div>
+    <a href="#profile" class="scroll-hint" aria-label="下へスクロール">
+      <span class="scroll-line"></span>
+      <span class="scroll-label">SCROLL</span>
     </a>
   </section>
 
-  <!-- プロフィールセクション -->
-  <section id="profile">
+  <!-- プロフィール -->
+  <section id="profile" class="section">
     <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Profile</h2>
-        <p class="section-subtitle">プロフィール</p>
+      <div class="section-head reveal">
+        <h2 class="sec-en">Profile</h2>
+        <p class="sec-jp">プロフィール</p>
       </div>
-      <div class="profile-grid">
-        <div class="profile-image-wrap">
-          <div class="profile-image-placeholder">
-            <img src="images/kiri-profile.png" alt="倖狼キリ プロフィール">
-          </div>
+      <div class="profile-layout">
+        <div class="profile-img-wrap reveal">
+          <img src="images/kiri-profile.png" alt="倖狼キリ プロフィール" class="profile-img">
+          <div class="profile-img-frame"></div>
         </div>
-        <div class="profile-info">
-          <div class="profile-name-block">
-            <h3 class="profile-name-jp">倖狼キリ</h3>
-            <p class="profile-name-read">ころう きり / KOROU KIRI</p>
+        <div class="profile-body">
+          <div class="reveal">
+            <h3 class="profile-name">倖狼キリ</h3>
+            <p class="profile-read">ころう きり ／ KOROU KIRI</p>
           </div>
-          <p class="profile-bio">
+          <p class="profile-bio reveal">
             声で世界を彩るVTuber声優。<br>
             感情豊かな演技と透き通る声が持ち味で、<br>
             アニメ・ゲーム・ナレーションと幅広いジャンルに対応します。
           </p>
-          <div class="profile-tags">
-            <div class="tag-group">
-              <h4>声質の特徴</h4>
-              <div class="tags">
-                <span class="tag">透明感のある高音域</span>
-                <span class="tag">感情表現が豊か</span>
-                <span class="tag">クリアな発音</span>
-                <span class="tag">ウィスパーボイス可</span>
+          <div class="reveal">
+            <div class="trait-block">
+              <h4 class="trait-heading">声質の特徴</h4>
+              <div class="trait-tags">
+                <span>透明感のある高音域</span>
+                <span>感情表現が豊か</span>
+                <span>クリアな発音</span>
+                <span>ウィスパーボイス可</span>
               </div>
             </div>
-            <div class="tag-group">
-              <h4>得意ジャンル</h4>
-              <div class="tags">
-                <span class="tag accent">アニメ・ゲームキャラ</span>
-                <span class="tag accent">ナレーション</span>
-                <span class="tag accent">CM・PV</span>
-                <span class="tag accent">ASMR</span>
-                <span class="tag accent">YouTube配信</span>
+            <div class="trait-block">
+              <h4 class="trait-heading">得意ジャンル</h4>
+              <div class="trait-tags accent">
+                <span>アニメ・ゲームキャラ</span>
+                <span>ナレーション</span>
+                <span>CM・PV</span>
+                <span>ASMR</span>
+                <span>YouTube配信</span>
               </div>
             </div>
           </div>
@@ -108,171 +101,122 @@
     </div>
   </section>
 
-  <!-- 実績セクション -->
-  <section id="achievements">
+  <!-- 実績 -->
+  <section id="achievements" class="section section-alt">
     <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Achievements</h2>
-        <p class="section-subtitle">実績</p>
+      <div class="section-head reveal">
+        <h2 class="sec-en">Works</h2>
+        <p class="sec-jp">実績</p>
       </div>
-      <div class="achievements-grid">
-
-        <div class="achievement-card">
-          <div class="achievement-icon">📺</div>
-          <div class="achievement-body">
-            <span class="achievement-category">アニメ出演</span>
-            <h3 class="achievement-title">アニメDAO</h3>
-            <p class="achievement-detail">
-              NTTドコモ コミュちゃんねる 第17話 出演
-            </p>
-          </div>
-        </div>
-
-        <div class="achievement-card">
-          <div class="achievement-icon">🌸</div>
-          <div class="achievement-body">
-            <span class="achievement-category">特別配信</span>
-            <h3 class="achievement-title">NTTドコモ × アニメDAO</h3>
-            <p class="achievement-detail">
-              春の特別配信（dアニメストア独占）
-            </p>
-          </div>
-        </div>
-
-        <div class="achievement-card">
-          <div class="achievement-icon">📖</div>
-          <div class="achievement-body">
-            <span class="achievement-category">掲載誌</span>
-            <h3 class="achievement-title">雑誌掲載</h3>
-            <p class="achievement-detail">
-              アニメディア / VTuberスタイル / コンプティーク
-            </p>
-          </div>
-        </div>
-
-        <div class="achievement-card">
-          <div class="achievement-icon">💻</div>
-          <div class="achievement-body">
-            <span class="achievement-category">個人開発</span>
-            <h3 class="achievement-title">Chrome拡張機能</h3>
-            <p class="achievement-detail">
-              オリジナル拡張機能を開発・公開<br>
-              ダウンロード数 30+ 達成
-            </p>
-          </div>
-        </div>
-
+      <div class="works-grid">
+        <article class="work-card reveal" style="--d:0s">
+          <span class="work-icon">📺</span>
+          <span class="work-cat">アニメ出演</span>
+          <h3>アニメDAO</h3>
+          <p>NTTドコモ コミュちゃんねる<br>第17話 出演</p>
+        </article>
+        <article class="work-card reveal" style="--d:0.1s">
+          <span class="work-icon">🌸</span>
+          <span class="work-cat">特別配信</span>
+          <h3>NTTドコモ × アニメDAO</h3>
+          <p>春の特別配信<br>dアニメストア独占</p>
+        </article>
+        <article class="work-card reveal" style="--d:0.2s">
+          <span class="work-icon">📖</span>
+          <span class="work-cat">掲載誌</span>
+          <h3>雑誌掲載</h3>
+          <p>アニメディア<br>VTuberスタイル<br>コンプティーク</p>
+        </article>
+        <article class="work-card reveal" style="--d:0.3s">
+          <span class="work-icon">💻</span>
+          <span class="work-cat">個人開発</span>
+          <h3>Chrome拡張機能</h3>
+          <p>オリジナル拡張機能を開発・公開<br>ダウンロード数 30+ 達成</p>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- ボイスサンプルセクション -->
-  <section id="voice">
+  <!-- ボイスサンプル -->
+  <section id="voice" class="section">
     <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Voice Samples</h2>
-        <p class="section-subtitle">ボイスサンプル</p>
+      <div class="section-head reveal">
+        <h2 class="sec-en">Voice Samples</h2>
+        <p class="sec-jp">ボイスサンプル</p>
       </div>
       <div class="voice-grid">
 
-        <div class="voice-card">
-          <div class="voice-card-header">
-            <span class="voice-label">キャラクターボイス</span>
-          </div>
-          <div class="voice-player">
-            <!-- 音声ファイル: audio/character.mp3 -->
-            <audio id="audio-character" src="audio/character.mp3" preload="none"></audio>
-            <button class="play-btn" data-audio="audio-character" aria-label="再生">
-              <span class="play-icon">▶</span>
+        <div class="voice-card reveal" style="--d:0s">
+          <div class="vc-label">キャラクターボイス</div>
+          <div class="vc-player">
+            <audio id="aud0" src="audio/character.mp3" preload="none"></audio>
+            <button class="vc-btn" data-aid="aud0" aria-label="再生">
+              <svg class="ico-play" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              <svg class="ico-pause" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
             </button>
-            <div class="voice-info">
-              <p class="voice-title">キャラクターボイスサンプル</p>
-              <p class="voice-desc">アニメ・ゲームキャラ向け</p>
-            </div>
-            <div class="voice-wave" id="wave-character">
-              <div class="wave-placeholder">
-                <small>audio/character.mp3 を配置してください</small>
-              </div>
+            <div class="vc-meta">
+              <p class="vc-title">キャラクターボイスサンプル</p>
+              <p class="vc-desc">アニメ・ゲームキャラ向け</p>
             </div>
           </div>
+          <p class="vc-note">audio/character.mp3 を配置してください</p>
         </div>
 
-        <div class="voice-card">
-          <div class="voice-card-header">
-            <span class="voice-label">ナレーション</span>
-          </div>
-          <div class="voice-player">
-            <!-- 音声ファイル: audio/narration.mp3 -->
-            <audio id="audio-narration" src="audio/narration.mp3" preload="none"></audio>
-            <button class="play-btn" data-audio="audio-narration" aria-label="再生">
-              <span class="play-icon">▶</span>
+        <div class="voice-card reveal" style="--d:0.1s">
+          <div class="vc-label">ナレーション</div>
+          <div class="vc-player">
+            <audio id="aud1" src="audio/narration.mp3" preload="none"></audio>
+            <button class="vc-btn" data-aid="aud1" aria-label="再生">
+              <svg class="ico-play" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              <svg class="ico-pause" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
             </button>
-            <div class="voice-info">
-              <p class="voice-title">ナレーションサンプル</p>
-              <p class="voice-desc">CM・PV・企業VP向け</p>
-            </div>
-            <div class="voice-wave" id="wave-narration">
-              <div class="wave-placeholder">
-                <small>audio/narration.mp3 を配置してください</small>
-              </div>
+            <div class="vc-meta">
+              <p class="vc-title">ナレーションサンプル</p>
+              <p class="vc-desc">CM・PV・企業VP向け</p>
             </div>
           </div>
+          <p class="vc-note">audio/narration.mp3 を配置してください</p>
         </div>
 
-        <div class="voice-card">
-          <div class="voice-card-header">
-            <span class="voice-label">ASMR / ウィスパー</span>
-          </div>
-          <div class="voice-player">
-            <!-- 音声ファイル: audio/asmr.mp3 -->
-            <audio id="audio-asmr" src="audio/asmr.mp3" preload="none"></audio>
-            <button class="play-btn" data-audio="audio-asmr" aria-label="再生">
-              <span class="play-icon">▶</span>
+        <div class="voice-card reveal" style="--d:0.2s">
+          <div class="vc-label">ASMR / ウィスパー</div>
+          <div class="vc-player">
+            <audio id="aud2" src="audio/asmr.mp3" preload="none"></audio>
+            <button class="vc-btn" data-aid="aud2" aria-label="再生">
+              <svg class="ico-play" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              <svg class="ico-pause" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
             </button>
-            <div class="voice-info">
-              <p class="voice-title">ASMRサンプル</p>
-              <p class="voice-desc">囁き・耳元ボイス</p>
-            </div>
-            <div class="voice-wave" id="wave-asmr">
-              <div class="wave-placeholder">
-                <small>audio/asmr.mp3 を配置してください</small>
-              </div>
+            <div class="vc-meta">
+              <p class="vc-title">ASMRサンプル</p>
+              <p class="vc-desc">囁き・耳元ボイス</p>
             </div>
           </div>
+          <p class="vc-note">audio/asmr.mp3 を配置してください</p>
         </div>
 
       </div>
-      <p class="voice-note">※ ヘッドフォン・イヤフォン推奨</p>
+      <p class="voice-foot reveal">※ ヘッドフォン・イヤフォン推奨</p>
     </div>
   </section>
 
-  <!-- お問い合わせセクション -->
-  <section id="contact">
+  <!-- お問い合わせ -->
+  <section id="contact" class="section section-alt">
     <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Contact</h2>
-        <p class="section-subtitle">お問い合わせ</p>
+      <div class="section-head reveal">
+        <h2 class="sec-en">Contact</h2>
+        <p class="sec-jp">お問い合わせ</p>
       </div>
-      <div class="contact-body">
-        <p class="contact-desc">
-          お仕事のご依頼・ご相談は、<br>
-          以下のメールアドレスよりお気軽にどうぞ。
-        </p>
-        <div class="contact-items">
-          <a href="mailto:neopikao@gmail.com" class="contact-mail-btn">
-            <span class="mail-icon">✉</span>
-            <span>メールでお問い合わせ</span>
-          </a>
-        </div>
-        <div class="contact-note">
-          <p>📌 対応内容</p>
-          <ul>
-            <li>アニメ・ゲームキャラクターボイス収録</li>
-            <li>ナレーション・CM・PV収録</li>
-            <li>YouTube / ライブ配信コラボ</li>
-            <li>その他、お気軽にご相談ください</li>
-          </ul>
-        </div>
+      <div class="contact-body reveal">
+        <p class="contact-desc">お仕事のご依頼・ご相談は、メールよりお気軽にどうぞ。</p>
+        <a href="mailto:neopikao@gmail.com" class="contact-btn">
+          ✉ メールでお問い合わせ
+        </a>
+        <ul class="contact-list">
+          <li>アニメ・ゲームキャラクターボイス収録</li>
+          <li>ナレーション・CM・PV収録</li>
+          <li>YouTube / ライブ配信コラボ</li>
+          <li>その他、お気軽にご相談ください</li>
+        </ul>
       </div>
     </div>
   </section>
@@ -280,14 +224,9 @@
   <!-- フッター -->
   <footer id="footer">
     <div class="container">
-      <div class="footer-inner">
-        <div class="footer-logo">
-          <span class="logo-jp">倖狼キリ</span>
-          <span class="logo-en">KOROU KIRI</span>
-        </div>
-        <p class="footer-role">Voice Actress / VTuber</p>
-        <p class="footer-copy">&copy; 2025 倖狼キリ. All rights reserved.</p>
-      </div>
+      <img src="images/kiri-logo.png" alt="倖狼キリ" class="footer-logo">
+      <p class="footer-role">Voice Actress / VTuber</p>
+      <p class="footer-copy">&copy; 2025 倖狼キリ. All rights reserved.</p>
     </div>
   </footer>
 
