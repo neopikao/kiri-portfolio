@@ -65,7 +65,8 @@ const heroEl   = document.getElementById('hero');
 function parallax(scrollY) {
   if (!heroChar || !heroEl) return;
   if (scrollY >= heroEl.offsetHeight) return;
-  heroChar.style.transform = `translateY(${scrollY * 0.28}px)`;
+  // translateX(-50%) で中央配置を維持しながら縦方向にパララックス
+  heroChar.style.transform = `translateX(-50%) translateY(${scrollY * 0.28}px)`;
 }
 
 // リサイズ時：スマホへ切り替わったらインライン transform をクリア

@@ -139,26 +139,29 @@ button { cursor: pointer; border: none; background: none; }
   inset: 0;
   z-index: 0;
 }
+/* キャラクターを中央に大きく表示 */
 .hero-char {
   position: absolute;
-  right: 0;
   bottom: 0;
-  height: 112%;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100%;
   width: auto;
-  max-width: 58%;
   object-fit: contain;
-  object-position: bottom right;
+  object-position: bottom center;
   will-change: transform;
 }
-/* グラデーションオーバーレイ（PC）*/
+/* 上下グラデーション：キャラを見せつつ上下を締める */
 .hero-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    105deg,
-    #1a1a2e 22%,
-    rgba(26, 26, 46, 0.78) 50%,
-    rgba(26, 26, 46, 0.08) 100%
+    to bottom,
+    rgba(26, 26, 46, 0.55)  0%,
+    transparent              14%,
+    transparent              52%,
+    rgba(26, 26, 46, 0.65)  72%,
+    #1a1a2e                 100%
   );
 }
 /* 装飾グロー */
@@ -179,38 +182,29 @@ button { cursor: pointer; border: none; background: none; }
   pointer-events: none;
 }
 
-/* テキスト・ボタン */
-.hero-content {
-  position: relative;
+/* キャッチコピー＋ボタン：画面下部に控えめ配置 */
+.hero-bottom {
+  position: absolute;
+  bottom: 52px;
+  left: 0; right: 0;
   z-index: 2;
-  padding-left: clamp(28px, 6vw, 84px);
-  padding-right: 24px;
-  max-width: 580px;
-  margin-top: var(--nav-h);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 0 24px;
 }
-.hero-logo {
-  max-width: 320px;
-  width: 100%;
-  height: auto;
-  margin-bottom: 18px;
-  filter: drop-shadow(0 4px 20px rgba(200, 54, 75, 0.4));
-}
-.hero-tagline {
-  font-size: 1rem;
+.hero-catch {
+  font-size: 0.88rem;
   color: var(--beige);
-  letter-spacing: 0.1em;
-  margin-bottom: 6px;
-}
-.hero-sub {
-  font-size: 0.85rem;
-  color: var(--dim);
-  line-height: 1.85;
-  margin-bottom: 32px;
+  letter-spacing: 0.26em;
+  opacity: 0.82;
 }
 .hero-btns {
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 /* ボタン */
@@ -604,45 +598,29 @@ button { cursor: pointer; border: none; background: none; }
     padding: 12px 0;
   }
 
-  /* --- ヒーロー：立ち絵を背景化 --- */
+  /* --- ヒーロー（スマホ）：立ち絵を全画面に、顔を上部に見せる --- */
   .hero-char {
-    /* 中央配置・天地フルカバー */
-    right: 50%;
-    transform: translateX(50%);
+    left: 50%;
+    transform: translateX(-50%);
     height: 100%;
     width: 100%;
     max-width: none;
     object-fit: cover;
     object-position: top center;
   }
-  /* オーバーレイ：上は薄く（顔を見せる）→下は濃く（文字可読） */
+  /* 上は透明（顔が見える）→ 下は濃く（キャッチ・ボタン可読） */
   .hero-overlay {
     background: linear-gradient(
       to bottom,
-      rgba(0, 0, 0, 0.04)  0%,
-      rgba(0, 0, 0, 0.10)  35%,
-      rgba(26,26,46, 0.80) 58%,
-      rgba(26,26,46, 0.95) 74%,
-      #1a1a2e              100%
+      rgba(0, 0, 0, 0.05)   0%,
+      rgba(0, 0, 0, 0.08)   38%,
+      rgba(26, 26, 46, 0.78) 58%,
+      rgba(26, 26, 46, 0.95) 74%,
+      #1a1a2e                100%
     );
   }
-  /* コンテンツを画面下部に固定 */
-  .hero-content {
-    position: absolute;
-    left: 0; right: 0;
-    bottom: 44px;
-    padding: 0 24px;
-    max-width: none;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  .hero-logo { max-width: 210px; margin-bottom: 12px; }
-  /* 説明文は非表示（スペース確保） */
-  .hero-tagline,
-  .hero-sub { display: none; }
+  /* キャッチ・ボタンは画面下部 */
+  .hero-bottom { bottom: 40px; gap: 12px; }
   .hero-btns {
     flex-direction: column;
     align-items: center;
@@ -665,6 +643,5 @@ button { cursor: pointer; border: none; background: none; }
 }
 
 @media (max-width: 420px) {
-  .hero-logo { max-width: 175px; }
   .sec-en { font-size: 1.7rem; }
 }
