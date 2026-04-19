@@ -648,7 +648,9 @@ section { padding: 100px 0; }
 }
 
 /* ===== レスポンシブ ===== */
-@media (max-width: 900px) {
+
+/* タブレット：ヒーローを縦積みレイアウト */
+@media (min-width: 769px) and (max-width: 900px) {
   .hero-content { flex-direction: column; gap: 40px; padding-top: calc(var(--nav-h) + 40px); min-height: auto; padding-bottom: 60px; }
   .hero-image-placeholder { width: 260px; height: 340px; margin: 0 auto; }
   .hero-text { text-align: center; }
@@ -657,7 +659,66 @@ section { padding: 100px 0; }
   .profile-grid { grid-template-columns: 1fr; }
   .profile-image-placeholder { max-width: 240px; margin: 0 auto; }
 }
-@media (max-width: 640px) {
+
+/* スマホ（768px以下）：ヒーローを背景画像＋オーバーレイに切り替え */
+@media (max-width: 768px) {
+  /* ヒーロー背景に立ち絵を全面配置 */
+  #hero {
+    background-image: url('images/kiri-main.png');
+    background-size: cover;
+    background-position: top center;
+  }
+  /* 半透明黒オーバーレイ */
+  .hero-gradient {
+    background: rgba(0, 0, 0, 0.5);
+  }
+  /* 立ち絵カードは非表示（背景に移行） */
+  .hero-image-wrap { display: none; }
+  /* コンテンツを中央縦配置・ファーストビューに収める */
+  .hero-content {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: var(--nav-h) 24px 80px;
+    min-height: 100svh;
+    min-height: 100vh;
+    gap: 0;
+  }
+  .hero-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .hero-catch {
+    justify-content: center;
+    font-size: 0.82rem;
+    margin-bottom: 8px;
+  }
+  .name-jp { font-size: 2.8rem; }
+  .hero-role { margin-bottom: 20px; }
+  /* 説明文は非表示にしてボタンをファーストビューへ */
+  .hero-desc { display: none; }
+  .hero-actions {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+  }
+  .btn-primary, .btn-secondary {
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+    padding: 14px 24px;
+  }
+  /* その他のセクション */
+  .profile-grid { grid-template-columns: 1fr; }
+  .profile-image-placeholder { max-width: 240px; margin: 0 auto; }
+  .achievements-grid { grid-template-columns: 1fr; }
+  .voice-grid { grid-template-columns: 1fr; }
+  section { padding: 72px 0; }
+  /* ハンバーガーメニュー */
   .nav-links {
     display: none;
     position: absolute;
@@ -675,8 +736,4 @@ section { padding: 100px 0; }
   .nav-links a:last-child { border-bottom: none; }
   .nav-cta { text-align: center; border-radius: 0; padding: 12px 0; }
   .nav-toggle { display: flex; }
-  section { padding: 72px 0; }
-  .achievements-grid { grid-template-columns: 1fr; }
-  .voice-grid { grid-template-columns: 1fr; }
-  .hero-image-placeholder { width: 220px; height: 300px; }
 }
